@@ -7,7 +7,7 @@ import datetime
 from DataBase import DB
 
 class Window(QtWidgets.QWidget):
-    
+
     def __init__(self):
         super().__init__() 
         self.init_interface()
@@ -19,7 +19,7 @@ class Window(QtWidgets.QWidget):
     def init_interface(self):
         self.setWindowTitle('FlexiTransport') 
         self.setGeometry(500,300,360,0)
-        
+                
         self.login_lable = QtWidgets.QLabel('Logged as: '+login_window.login)
         
         self.tabs = QtWidgets.QTabWidget()
@@ -99,7 +99,7 @@ class Window(QtWidgets.QWidget):
         self.date = self.dateedit.text()
         self.datelable.setText('Date is set to '+ str(self.date))
         self.load_file_btn.setDisabled(False)
-        
+
     def load_btnclick(self):
         try:
             directory = QtWidgets.QFileDialog.getOpenFileName() 
@@ -129,7 +129,7 @@ class Window(QtWidgets.QWidget):
         finally:
             self.load_P4F_lable.setText('P4F data Loaded')
             self.send_all.setDisabled(False)  
-               
+    
     def add_attachment_clk(self):
         directory = QtWidgets.QFileDialog.getOpenFileName()
         with open(directory[0], "rb") as opened:
@@ -137,9 +137,7 @@ class Window(QtWidgets.QWidget):
         self.add_attachmentlable.setText('Attachment Loaded')    
 
     def send_all_clk(self): 
-        self.mail = Plan_mail(\
-                              \
-                              self.date,self.login,self.password)
+        self.mail = Plan_mail(self.date,self.login,self.password)
         if self.openedfile == 'None':
             self.mail.sendmail_prv(self.Trans_Reader.wel_gepland_prv)
             self.mail.sendmail_wel_gepland(self.Trans_Reader.wel_gepland)
@@ -185,6 +183,7 @@ class Login(QtWidgets.QDialog):
         self.passedit.setPlaceholderText('password')
         self.login_btn = QtWidgets.QPushButton('Log In')    
         self.login_status = QtWidgets.QLabel('')
+        
         
         v_box = QtWidgets.QVBoxLayout()
         v_box.addWidget(self.loginedit)

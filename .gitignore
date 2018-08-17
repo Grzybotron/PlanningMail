@@ -1,2 +1,12 @@
 
 *.pdf
+emails_data.db
+vortex-green.png
+vortex-black.png
+.spyproject/codestyle.ini
+.spyproject/encoding.ini
+.spyproject/vcs.ini
+.spyproject/workspace.ini
+__pycache__/DataBase.cpython-36.pyc
+__pycache__/sendmail.cpython-36.pyc
+__pycache__/trans_Reader.cpython-36.pyc

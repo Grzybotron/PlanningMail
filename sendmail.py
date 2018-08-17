@@ -84,7 +84,7 @@ class Plan_mail():
                     \n Kierowca: '+line[5]+'\
                     \n \nW załączniku znajdziesz również pełny plan na jutro.\
                     \n \nKażdą nieobecność zgłoś natychmiast pod numer tel. 0031 614750502 / 0031 618974055 \
-                    \n \nSerdecznie pozdrawiamy! \nPlanning
+                    \n \nSerdecznie pozdrawiamy! \nPlanning'
                     
                 else:
                     text = \
@@ -165,7 +165,7 @@ class Plan_mail():
     def make_raport(self, file_name, l_geen_mail=None):
         if l_geen_mail != None:
             for line in l_geen_mail:
-                self.raport_list.append(['Cannot send to: ',line[2]+' '+line[1],' no email)
+                self.raport_list.append(['Cannot send to: ',line[2]+' '+line[1],' no email'])
         with open(file_name + ' '+str(datetime.datetime.now().strftime("%Y-%m-%d %H;%M;%S")) + '.csv', 'w', newline='') as raport_file:
                 writer = csv.writer(raport_file, delimiter=';')
                 for line in self.raport_list:
