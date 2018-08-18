@@ -1,4 +1,4 @@
-""""Testing Git"""
+""""Testing Git v0.1"""
 
 dayoff_pl = \
     'Witam '+line[2]+' '+line[1]+',\
